@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Face Recognition Web App</title>
+    <style>
+      /* Center the title */
+      h1 {
+        text-align: center;
+      }
+
+      /* Style the form buttons */
+      input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        display: block;
+        margin: 0 auto;
+        width: 50%;
+      }
+
+      input[type="submit"].recorded {
+        background-color: #f44336;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+
+      /* Style the file upload button */
+      input[type="file"] {
+        display: block;
+        margin: 0 auto;
+      }
+      
+      /* Style the image */
+      #face-image {
+        display: block;
+        margin: 0 auto;
+        width: 50%;
+        height:25%;
+      }
+      /* Gradient background */
+      body {
+        background: linear-gradient(to right bottom, #23074d, #cc5333);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #ffffff;
+        text-align: center;
+      }
+      /* Blink the title */
+      .blink {
+        animation: blinker 1s linear infinite;
+      }
+
+      @keyframes blinker {
+        50% {
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="blink">Face Recognition Web App</h1>
+    <form action="/live_attendance" method="POST">
+      <input type="submit" value="Live Attendance">
+    </form>
+    <br>
+    <form action="/recorded_video" method="POST" enctype="multipart/form-data">
+      <input type="file" name="video" accept="video/*" required>
+      <br>
+      <br>
+      <input type="submit" value="Submit" class="recorded">
+    </form>
+    <br>
+    <img src="static/bg.jpg" alt="face image" id="face-image">
+  </body>
+</html>

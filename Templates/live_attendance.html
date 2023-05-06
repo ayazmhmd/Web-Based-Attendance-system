@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Live Attendance</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h1 {
+        margin-bottom: 20px;
+      }
+      table {
+        border-collapse: collapse;
+        margin-bottom: 20px;
+        width: 100%;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+      tr:hover {
+        background-color: #ddd;
+      }
+      p {
+        font-style: italic;
+      }
+      .button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 12px 30px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Live Attendance</h1>
+    {% if attendance is not none %}
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Attendance</th>
+            <th>Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for index, row in attendance.iterrows() %}
+            <tr>
+              <td>{{ row['Name'] }}</td>
+              <td>{{ row['Attendance'] }}</td>
+              <td>{{ row['Time'] }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <a href="/download_attendance" class="button">Download Attendance</a>
+    {% else %}
+      <p>No attendance data yet.</p>
+    {% endif %}
+  </body>
+</html>
