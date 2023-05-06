@@ -1,11 +1,11 @@
-Face Recognition Attendance Tracker
+<h3>Face Recognition Attendance Tracker<br></h3>
 This web app uses face recognition to provide real-time attendance tracking and video upload capabilities. The app is built using the Flask web framework and the face recognition module, which is a Python library for facial recognition.
 
-Features
-Real-time camera attendance tracking
-Video upload attendance tracking
-Display attendance with timestamps
-Download attendance report
+<b>Features</b><br>
+Real-time camera attendance tracking<br>
+Video upload attendance tracking<br>
+Display attendance with timestamps<br>
+Download attendance report<br>
 ![Image 1](1.JPG "Image 1")
 ![Image 2](2.JPG "Image 2")
 
